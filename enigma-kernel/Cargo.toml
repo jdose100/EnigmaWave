@@ -1,0 +1,57 @@
+[package]
+name = "enigma-kernel"    # Enigma Wave Kernel
+version = "0.0.1-alpha.1"
+edition = "2024"
+publish = false
+
+[lib]
+doctest = false
+
+[[bin]]
+path = "src/bin/main.rs"
+name = "kernel"
+bench = false
+test = false
+
+[dependencies]
+lazy_static = { version = "1.5", features = ["spin_no_std"] }
+log = { version = "0.4.17", default-features = false }
+bootloader-x86_64-common = "0.11.3"
+linked_list_allocator = "0.9.0"
+embedded-graphics = "0.8.1"
+bootloader_api = "0.11"
+pc-keyboard = "0.7.0"
+uart_16550 = "0.2.0"
+volatile = "0.2.6"
+x86_64 = "=0.15.2"
+acpi = "=4.1.1"
+spin = "=0.5.2"
+
+[dependencies.crossbeam-queue]
+default-features = false
+features = ["alloc"]
+version = "0.3.11"
+
+[dependencies.conquer-once]
+default-features = false
+version = "0.4.0"
+
+[dependencies.futures-util]
+default-features = false
+features = ["alloc"]
+version = "0.3.4"
+
+[dependencies.noto-sans-mono-bitmap]
+version = "0.2.0"
+default-features = false
+features = [
+    "regular",
+    "size_16",
+    "unicode-basic-latin",
+    "unicode-specials",    # required for the fallback char '�'
+]
+
+[[test]]
+name = "stack_overflow"
+harness = false
+

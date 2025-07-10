@@ -1,11 +1,3 @@
 [unstable]
-build-std-features = ["compiler-builtins-mem"]
-build-std = ["core", "compiler_builtins", "alloc"]
-panic-abort-tests = true
-
-[build]
-target = "x86_64-unknow-core.json"
-
-[target.'cfg(target_os = "none")']
-runner = "bootimage runner"
+bindeps = true
 

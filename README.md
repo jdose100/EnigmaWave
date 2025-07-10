@@ -1,4 +1,4 @@
-# ![EnigmaWave](assets/icon-256x256.png)
+![EnigmaWave](assets/icon-1024x512.png)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 ## Enigma Wave OS

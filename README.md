@@ -92,6 +92,6 @@ Enigma Wave - это небольшая операционная система 
 + [MIT License](LICENSE) или http://opensource.org/licenses/MIT
 
 # Источники
-+ [Создание ОС на Rust от Philipp Oppermann](https://os.phil-opp.com/vga-text-mode/)
++ [Создание ОС на Rust от Philipp Oppermann](https://os.phil-opp.com)
 + [Bootloader](https://github.com/rust-osdev/bootloader)
 + [OSDev Wiki](https://wiki.osdev.org/Main_Page)

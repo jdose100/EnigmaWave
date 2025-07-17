@@ -1,5 +1,5 @@
 [package]
-name = "enigma-wave--builder"
+name = "EnigmaWave"
 version = "0.1.0"
 edition = "2024"
 build = "src/build.rs"
@@ -22,6 +22,6 @@ ovmf-prebuilt = "0.1.0-alpha"
 opt-level = 3
 
 [build-dependencies]
-enigma-kernel = { path = "enigma-kernel", artifact = "bin", target = "x86_64-unknown-none"}
+enigma-kernel = { path = "enigma-kernel", artifact = "bin", target = "x86_64-unknown-none" }
 bootloader = "0.11.3"
 

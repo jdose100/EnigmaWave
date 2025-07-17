@@ -99,6 +99,12 @@ impl LAPICAddress {
     }
 }
 
+impl Default for LAPICAddress {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 pub struct AcpiHandlerImpl {
     physical_memory_offset: VirtAddr,
 }
@@ -148,6 +154,13 @@ impl AcpiHandler for AcpiHandlerImpl {
     }
 }
 
+#[allow(clippy::missing_safety_doc)]
+// Данная функция инициализирует данный модуль.
+//
+// ## Safety
+//
+// Данная функция не безопастна потому, что аддрес передаваемый в rsdp
+// не проверяется (так как это не возможно).
 pub unsafe fn init(
     rsdp: usize,
     physical_memory_offset: VirtAddr,

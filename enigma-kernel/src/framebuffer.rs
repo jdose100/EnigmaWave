@@ -73,11 +73,17 @@ unsafe impl Send for FrameBufferWriter {}
 unsafe impl Sync for FrameBufferWriter {}
 
 impl FrameBufferWriter {
-    /// Creates a new logger that uses the given framebuffer.
+    /// Создает новый регистратор, который использует данный фреймбуфер.
+    ///
+    /// ## Safety
+    ///
+    /// После вызова этой функции должен идти вызов функции инициализации,
+    /// так-как отсутсвия вызова этой функции несет не определенное поведение.
     pub const unsafe fn new() -> Self {
         static mut ZERO: &mut [u8] = &mut [0];
         let logger: Self;
 
+        #[allow(clippy::deref_addrof)]
         unsafe {
             logger = Self {
                 framebuffer: &mut *&raw mut ZERO,
